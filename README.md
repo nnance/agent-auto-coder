@@ -9,3 +9,90 @@ This agent is designed to take high-level specifications and implement them in c
 - Automatic code generation from user requirements
 - Integration with Anthropic's Agent SDK
 - Non-interactive operation for seamless automation
+- Docker support for containerized execution
+
+## Prerequisites
+
+- Node.js 20+ (for local development)
+- Docker & Docker Compose (for containerized execution)
+- Anthropic API key (set via `ANTHROPIC_API_KEY` environment variable)
+
+## Local Development
+
+### Setup
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Create a `.env` file with your API key:
+```bash
+echo "ANTHROPIC_API_KEY=your-key-here" > .env
+```
+
+3. Run the agent:
+```bash
+npm start "Your prompt here"
+```
+
+## Docker Usage
+
+### Build the Docker Image
+
+```bash
+docker build -t agent-auto-coder .
+```
+
+### Run with Docker
+
+```bash
+docker run --env ANTHROPIC_API_KEY=your-key-here agent-auto-coder "Your prompt here"
+```
+
+Or using environment file:
+```bash
+docker run --env-file .env agent-auto-coder "Your prompt here"
+```
+
+### Run with Docker Compose
+
+1. Ensure your `.env` file contains `ANTHROPIC_API_KEY`:
+```bash
+echo "ANTHROPIC_API_KEY=your-key-here" > .env
+```
+
+2. Run the container:
+```bash
+docker-compose run --rm agent-coder "Your prompt here"
+```
+
+Or with a specific prompt in the docker-compose.yml:
+```bash
+docker-compose run --rm agent-coder
+```
+
+### Examples
+
+Generate a utility function:
+```bash
+docker run --env-file .env agent-auto-coder "Create a function that validates email addresses"
+```
+
+Refactor existing code (from local file mounted as volume):
+```bash
+docker run --env-file .env -v $(pwd)/src:/app/input agent-auto-coder "Refactor the code in /app/input"
+```
+
+## Development
+
+### Scripts
+
+- `npm run build` - Compile TypeScript to JavaScript
+- `npm start` - Run the agent with a prompt argument
+- `npm run lint` - Run Biome linter
+- `npm run format` - Format code with Biome
+
+## Environment Variables
+
+- `ANTHROPIC_API_KEY` - Your Anthropic API key (required)
