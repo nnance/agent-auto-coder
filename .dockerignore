@@ -29,8 +29,6 @@ coverage
 secrets
 config/secrets.*
 README.md
-tsconfig.json
 biome.json
 .prettierrc
 .eslintrc
-package-lock.json

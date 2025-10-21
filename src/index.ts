@@ -6,7 +6,7 @@ const prompt = process.argv[2];
 
 if (!prompt) {
 	console.error("Error: Please provide a prompt as the first argument");
-	console.error("Usage: npm start \"Your prompt here\"");
+	console.error('Usage: npm start "Your prompt here"');
 	process.exit(1);
 }
 
@@ -14,7 +14,6 @@ const responseStream = query({
 	prompt,
 	options: {
 		model: "claude-sonnet-4-5-20250929",
-		maxTurns: 10,
 		permissionMode: "bypassPermissions",
 		systemPrompt: {
 			type: "preset",
