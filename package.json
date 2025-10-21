@@ -1,0 +1,25 @@
+{
+	"name": "agent-auto-coder",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc",
+		"format": "biome check src --fix",
+		"lint": "biome check src",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@biomejs/biome": "^2.2.6",
+		"@types/node": "^24.9.1",
+		"typescript": "^5.9.3"
+	},
+	"dependencies": {
+		"@anthropic-ai/claude-agent-sdk": "^0.1.23",
+		"dotenv": "^17.2.3",
+		"zod": "^3.25.76"
+	}
+}
