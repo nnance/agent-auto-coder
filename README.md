@@ -81,7 +81,7 @@ docker run --env-file .env agent-auto-coder "Create a function that validates em
 
 Refactor existing code (from local file mounted as volume):
 ```bash
-docker run --env-file .env -v $(pwd)/src:/app/input agent-auto-coder "Refactor the code in /app/input"
+docker run --env-file .env -v $(pwd):/app/input agent-auto-coder "Refactor the code in input/utils.js to improve performance"
 ```
 
 ## Development

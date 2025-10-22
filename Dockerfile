@@ -61,8 +61,11 @@ RUN useradd -m -u 1001 nodejs
 
 USER nodejs
 
+# Set working directory for input files (to be mounted at runtime)
+WORKDIR /app/input
+
 # Default entrypoint
-ENTRYPOINT ["node", "./dist/index.js"]
+ENTRYPOINT ["node", "../dist/index.js"]
 
 # Default command (can be overridden with docker run)
 CMD ["Please provide a prompt as a command argument"]
