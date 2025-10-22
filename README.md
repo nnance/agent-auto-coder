@@ -21,17 +21,27 @@ This agent is designed to take high-level specifications and implement them in c
 
 ### Setup
 
-1. Install dependencies:
+1. Clone the repository:
+```bash
+git clone https://github.com/nnance/agent-auto-coder.git
+```
+
+2. Navigate to the project directory:
+```bash
+cd agent-auto-coder
+```
+
+3. Install dependencies:
 ```bash
 npm install
 ```
 
-2. Create a `.env` file with your API key:
+4. Create a `.env` file with your API key:
 ```bash
 echo "ANTHROPIC_API_KEY=your-key-here" > .env
 ```
 
-3. Run the agent:
+5. Run the agent:
 ```bash
 npm start "Your prompt here"
 ```
@@ -96,3 +106,9 @@ docker run --env-file .env -v $(pwd):/app/input agent-auto-coder "Refactor the c
 ## Environment Variables
 
 - `ANTHROPIC_API_KEY` - Your Anthropic API key (required)
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
